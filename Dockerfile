@@ -5,8 +5,6 @@ RUN  apk update \
   && apk add haproxy \
   && rm -rf /var/cache/apk/*
 
-ENV HAPROXY_CONFIG /haproxy/haproxy.cfg
-
 ENTRYPOINT [ "haproxy" ]
 
-CMD [ "-f", "$HAPROXY_CONFIG" ]
+CMD [ "-f", "/haproxy/haproxy.cfg" ]
